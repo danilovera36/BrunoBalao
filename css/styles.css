@@ -139,6 +139,18 @@ body {
 }
 
 /* Galería */
+.gallery-images,
+.gallery-videos {
+  margin-top: 2rem;
+}
+
+.gallery-images h3,
+.gallery-videos h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 250px por ítem */
@@ -150,8 +162,8 @@ body {
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px; /* Ancho máximo fijo */
-  height: 400px; /* Altura fija */
+  max-width: 250px; /* Ancho máximo fijo */
+  height: 200px; /* Altura fija */
   margin: 0 auto; /* Centra el ítem */
 }
 
