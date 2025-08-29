@@ -20,37 +20,67 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */. header {
+/* Header */  
+.header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Menú a la izquierda, redes a la derecha */
   align-items: center;
-  padding:1rem 2rem;
-  background: transparent; /* Fondo completamente transparente */  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */  position: absolute; /* Cambiamos sticky por absolute */  top: 0;
+  padding: 1rem 2rem;
+  background: transparent; /* Fondo completamente transparente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: absolute; /* Cambiamos sticky por absolute */
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
 }
 
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .nav a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombras para mejor lectura */}
-
-.nav a:hover {
-  color: #b2dfdb; /* Verde menta claro */  transform: translateY(-2px);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombras para mejor lectura */
 }
 
-/* Banner */. banner {
+.nav a:hover {
+  color: var(--secondary-color); /* Verde menta claro */
+  transform: translateY(-2px);
+}
+
+.social-icons-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons-header a {
+  color: var(--primary-color); /* Verde oscuro */
+  font-size: 2rem; /* Íconos más grandes */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons-header a:hover {
+  transform: scale(1.2);
+  color: var(--secondary-color); /* Verde menta claro */
+}
+
+/* Banner */  
+.banner {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('banner.jpg') no-repeat center center/cover;
-  height: 100vh; /* Ocupa toda la altura de la ventana */  display: flex;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
   position: relative;
-  margin-top: 0; /* Aseguramos que no haya margen superior */}
+  margin-top: 0; /* Aseguramos que no haya margen superior */
+}
 
 .banner-content {
   position: relative;
@@ -89,12 +119,14 @@ body {
   transform: translateY(-2px);
 }
 
-/* Secciones */. section {
+/* Secciones */  
+.section {
   padding: 60px 20px;
   text-align: center;
   background: white;
   border-bottom: 1px solid var(--secondary-color);
 }
+
 .section h2 {
   color: var(--primary-color);
   margin-bottom: 2rem;
@@ -102,7 +134,8 @@ body {
   font-weight: 600;
 }
 
-/* Grid de servicios */. services-grid {
+/* Grid de servicios */  
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -127,7 +160,8 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Galería */. gallery-images,
+/* Galería */  
+.gallery-images,
 .gallery-videos {
   margin-top: 2rem;
 }
@@ -141,7 +175,8 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 250px por ítem */  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 250px por ítem */
+  gap: 1.5rem;
 }
 
 .gallery-item {
@@ -149,18 +184,25 @@ body {
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 250px; /* Ancho máximo fijo */  height: 200px; /* Altura fija */  margin: 0 auto; /* Centra el ítem */}
+  max-width: 250px; /* Ancho máximo fijo */
+  height: 200px; /* Altura fija */
+  margin: 0 auto; /* Centra el ítem */
+}
 
 .gallery-item img,
 .gallery-item video {
-  width: 100%; /* Ocupa el ancho del cont otro */  height: 100%; /* Ocupa la altura del cont otro */  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */  transition: transform 0.3s ease;
+  width: 100%; /* Ocupa el ancho del contenedor */
+  height: 100%; /* Ocupa la altura del contenedor */
+  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img,
 .gallery-item:hover video {
-  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */}
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
 
-overlay {
+.overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -176,7 +218,8 @@ overlay {
   opacity: 1;
 }
 
-/* Footer */. footer {
+/* Footer */  
+.footer {
   background: var(--primary-color);
   color: white;
   text-align: center;
@@ -190,23 +233,8 @@ overlay {
   gap: 1rem;
 }
 
-.social-icons {
-  display: flex;
-  gap:1rem;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: var(--secondary-color);
-}
-
-/* Animaciones Scroll Reveal */. reveal {
+/* Animaciones Scroll Reveal */  
+.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
@@ -217,14 +245,24 @@ overlay {
   transform: translateY(0);
 }
 
-/* Responsive */@media (max-width: 768px) {
+/* Responsive */  
+@media (max-width: 768px) {
   .header {
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
   }
+
+  .social-icons-header {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
   .banner h1 {
     font-size: 2.2rem;
   }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
