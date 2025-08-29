@@ -191,18 +191,16 @@ body {
 
 .gallery-item img,
 .gallery-item video {
-  width: 100%; /* Ocupa el ancho del contenedor */
-  height: 100%; /* Ocupa la altura del contenedor */
-  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */
-  transition: transform 0.3s ease;
+  width: 100%; /* Ocupa el ancho del cont otro */
+  height: 100%; /* Ocupa la altura del cont otro */
+  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img,
 .gallery-item:hover video {
-  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
-}
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */}
 
-.overlay {
+overlay {
   position: absolute;
   bottom: 0;
   left: 0;
