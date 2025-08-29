@@ -23,12 +23,12 @@ body {
 /* Header */  
 .header {
   display: flex;
-  justify-content: space-between; /* Menú a la izquierda, redes a la derecha */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: transparent; /* Fondo completamente transparente */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  position: absolute; /* Cambiamos sticky por absolute */
+  background: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Cambia de absolute a fixed */
   top: 0;
   left: 0;
   right: 0;
@@ -74,7 +74,7 @@ body {
 /* Banner */  
 .banner {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('banner.jpg') no-repeat center center/cover;
-  height: 100vh; /* Ocupa toda la altura de la ventana */
+  height: 80vh; /* Ocupa toda la altura de la ventana */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,16 +193,18 @@ body {
 
 .gallery-item img,
 .gallery-item video {
-  width: 100%; /* Ocupa el ancho del cont otro */
-  height: 100%; /* Ocupa la altura del cont otro */
-  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */  transition: transform 0.3s ease;
+  width: 100%; /* Ocupa el ancho del contenedor */
+  height: 100%; /* Ocupa la altura del contenedor */
+  object-fit: cover; /* Asegura que el contenido cubra el espacio sin deformarse */
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img,
 .gallery-item:hover video {
-  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */}
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
 
-overlay {
+.overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -276,19 +278,6 @@ overlay {
   align-items: center;
   gap: 1rem;
 }
-
-/* Animaciones Scroll Reveal */  
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Responsive */  
 @media (max-width: 768px) {
   .header {
