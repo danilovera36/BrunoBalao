@@ -272,4 +272,46 @@ overlay {
 
 .footer-content {
   display: flex;
-  flex-direction
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Animaciones Scroll Reveal */  
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */  
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .social-icons-header {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
